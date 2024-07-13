@@ -1,0 +1,14 @@
+{
+    "productos": [
+        { "id": 1, "nombre": "Producto 1", "cantidad": 10, "precio": 100 },
+        { "id": 2, "nombre": "Producto 2", "cantidad": 20, "precio": 200 }
+    ],
+    "ventas": [
+        { "id": 1, "producto": "Producto 1", "cantidad": 2, "precio": 200 },
+        { "id": 2, "producto": "Producto 2", "cantidad": 1, "precio": 200 }
+    ],
+    "carrito": [
+        { "id": 1, "nombre": "Producto 1", "cantidad": 2, "precio": 200 },
+        { "id": 2, "nombre": "Producto 2", "cantidad": 1, "precio": 200 }
+    ]
+}
