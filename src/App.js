@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import AgregarProducto from './components/AgregarProducto';
-import ModificarProducto from './components/modificarProducto'; // Asegúrate de que la capitalización coincida con el nombre real del archivo
+import ModificarProducto from './components/modificarProducto'; // Verifica la capitalización y el nombre exacto del archivo
 import AgregarUnidades from './components/AgregarUnidades';
 import ListarProductos from './components/ListarProductos';
 import ListarVentas from './components/ListarVentas';
 import ListarProductosDisponibles from './components/ListarProductosDisponibles';
 import SeleccionarProductos from './components/SeleccionarProductos';
 import ConfirmarCompra from './components/ConfirmarCompra';
-import React from 'react';
-import Login from './components/login';
+import RegistroPersona from './components/RegistroPersona'; // Asegúrate de que este archivo exista y esté en la ruta correcta
+import Login from './components/login'; // Asegúrate de que la capitalización coincida con el nombre real del archivo y esté en la ruta correcta
 
 function App() {
     const [productos, setProductos] = useState([
@@ -72,17 +72,10 @@ function App() {
             <ListarProductosDisponibles productos={productos} />
             <SeleccionarProductos productos={productos.filter(p => p.cantidad > 0)} seleccionarProducto={seleccionarProducto} />
             <ConfirmarCompra carrito={carrito} confirmarCompra={confirmarCompra} />
+            <RegistroPersona /> {/* Asegúrate de que este archivo exista */}
+            <Login /> {/* Asegúrate de que la capitalización coincida con el nombre real del archivo */}
         </div>
     );
-    const App = () => {
-        return (
-            <div className="App">
-                <h1>Mi Tienda - Sistema de Gestión</h1>
-                <Login />
-            </div>
-        );
-    };
-    
 }
 
 export default App;

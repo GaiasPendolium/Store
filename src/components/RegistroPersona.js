@@ -1,29 +1,34 @@
-// src/components/Login.js
-
 import React, { useState } from 'react';
-import axios from 'axios';
 
-const Login = () => {
+const RegistroPersona = () => {
+    const [nombre, setNombre] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        try {
-            const response = await axios.post('/api/login', { email, password });
-            localStorage.setItem('token', response.data.token);
-            console.log('Login exitoso');
-            // Redireccionar a otra página o actualizar el estado de autenticación
-        } catch (error) {
-            console.error('Error en el login:', error.response.data.msg);
-            // Manejar el error, por ejemplo, mostrar un mensaje de error al usuario
-        }
+        // Aquí puedes implementar la lógica para enviar los datos al backend
+        console.log('Datos enviados:', { nombre, email, password });
+        // Reiniciar el formulario después de enviar los datos
+        setNombre('');
+        setEmail('');
+        setPassword('');
     };
 
     return (
         <div>
-            <h2>Login</h2>
+            <h2>Registro de Personas</h2>
             <form onSubmit={handleSubmit}>
+                <div className="form-group">
+                    <label>Nombre:</label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        value={nombre}
+                        onChange={(e) => setNombre(e.target.value)}
+                        required
+                    />
+                </div>
                 <div className="form-group">
                     <label>Email:</label>
                     <input
@@ -44,10 +49,10 @@ const Login = () => {
                         required
                     />
                 </div>
-                <button type="submit" className="btn btn-primary">Login</button>
+                <button type="submit" className="btn btn-primary">Registrar</button>
             </form>
         </div>
     );
 };
 
-export default Login;
+export default RegistroPersona;
