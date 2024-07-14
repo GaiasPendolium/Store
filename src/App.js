@@ -7,6 +7,8 @@ import ListarVentas from './components/ListarVentas';
 import ListarProductosDisponibles from './components/ListarProductosDisponibles';
 import SeleccionarProductos from './components/SeleccionarProductos';
 import ConfirmarCompra from './components/ConfirmarCompra';
+import React from 'react';
+import Login from 'C:\Users\theda\mi-tienda\src\login.js';
 
 function App() {
     const [productos, setProductos] = useState([
@@ -72,6 +74,15 @@ function App() {
             <ConfirmarCompra carrito={carrito} confirmarCompra={confirmarCompra} />
         </div>
     );
+    const App = () => {
+        return (
+            <div className="App">
+                <h1>Mi Tienda - Sistema de Gestión</h1>
+                <Login />
+            </div>
+        );
+    };
+    
 }
 
 export default App;
