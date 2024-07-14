@@ -8,7 +8,7 @@ import ListarProductosDisponibles from './components/ListarProductosDisponibles'
 import SeleccionarProductos from './components/SeleccionarProductos';
 import ConfirmarCompra from './components/ConfirmarCompra';
 import React from 'react';
-import Login from 'C:\Users\theda\mi-tienda\src\login.js';
+import Login from './components/login';
 
 function App() {
     const [productos, setProductos] = useState([
