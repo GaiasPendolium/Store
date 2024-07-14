@@ -6,8 +6,13 @@ function AgregarUnidades({ producto, agregarUnidades }) {
     const handleSubmit = (e) => {
         e.preventDefault();
         agregarUnidades(producto.id, unidades);
-        setUnidades(0);
+        setUnidades(0); // Reinicia el estado de unidades después de agregarlas
     };
+
+    // Verifica si producto está definido antes de renderizar
+    if (!producto) {
+        return null; // Otra opción es renderizar un mensaje de error o cargar de nuevo
+    }
 
     return (
         <div className="card my-4">
@@ -25,7 +30,7 @@ function AgregarUnidades({ producto, agregarUnidades }) {
                             type="number"
                             className="form-control"
                             value={unidades}
-                            onChange={(e) => setUnidades(e.target.value)}
+                            onChange={(e) => setUnidades(parseInt(e.target.value, 10))}
                             required
                         />
                     </div>

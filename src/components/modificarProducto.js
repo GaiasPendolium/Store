@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 
 function ModificarProducto({ producto, modificarProducto }) {
+    // Asegurar que producto tenga un valor por defecto si es undefined
+    if (!producto) {
+        producto = { nombre: '', descripcion: '', valor: 0, cantidad: 0 };
+    }
+
     const [nombre, setNombre] = useState(producto.nombre);
     const [descripcion, setDescripcion] = useState(producto.descripcion);
     const [valor, setValor] = useState(producto.valor);
@@ -50,7 +55,7 @@ function ModificarProducto({ producto, modificarProducto }) {
                             type="number"
                             className="form-control"
                             value={valor}
-                            onChange={(e) => setValor(e.target.value)}
+                            onChange={(e) => setValor(Number(e.target.value))}
                             required
                         />
                     </div>
@@ -60,7 +65,7 @@ function ModificarProducto({ producto, modificarProducto }) {
                             type="number"
                             className="form-control"
                             value={cantidad}
-                            onChange={(e) => setCantidad(e.target.value)}
+                            onChange={(e) => setCantidad(Number(e.target.value))}
                             required
                         />
                     </div>

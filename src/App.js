@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import AgregarProducto from './components/AgregarProducto';
-import ModificarProducto from './components/modificarProducto';
+import ModificarProducto from './components/modificarProducto'; // Asegúrate de que la capitalización coincida con el nombre real del archivo
 import AgregarUnidades from './components/AgregarUnidades';
 import ListarProductos from './components/ListarProductos';
 import ListarVentas from './components/ListarVentas';
@@ -63,7 +63,7 @@ function App() {
     return (
         <div className="container mt-4">
             <AgregarProducto agregarProducto={agregarProducto} />
-            <ModificarProducto productos={productos} modificarProducto={modificarProducto} /> {/* Asegúrate de pasar correctamente 'modificarProducto' como prop */}
+            <ModificarProducto productos={productos} modificarProducto={modificarProducto} />
             <AgregarUnidades productos={productos} agregarUnidades={agregarUnidades} />
             <ListarProductos productos={productos} />
             <ListarVentas ventas={ventas} />
